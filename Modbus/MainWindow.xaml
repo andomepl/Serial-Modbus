@@ -1,0 +1,42 @@
+﻿<Window x:Class="Modbus.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Modbus"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox 
+            
+            BorderThickness="3"
+            BorderBrush="MediumPurple"
+            Margin="10" 
+            Header="SerialPortSetting" 
+            FontWeight="DemiBold"
+            FontStyle="Normal"
+            FontSize="15">
+            <StackPanel Margin="10 10">
+                <StackPanel 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center" 
+                    Margin="0 10">
+                    <TextBlock Text="Serial Port" 
+                               FontWeight="Normal"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ComboBox Margin="10 0 ">
+                        <ComboBoxItem IsSelected="True" FontWeight="Normal">COM1</ComboBoxItem>
+                        <ComboBoxItem FontWeight="Normal">COM2</ComboBoxItem>
+                        <ComboBoxItem FontWeight="Normal">COM3</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        
+    </Grid>
+</Window>
