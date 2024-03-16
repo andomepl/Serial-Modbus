@@ -226,11 +226,20 @@ namespace SerialPort.ViewModels
 
         private void SendSerialData()
         {
-            if(serialPort.IsOpen)
+
+
+            Task.Factory.StartNew(async() =>
             {
-                byte[] bytes = Encoding.UTF8.GetBytes(SendMessage);
-                serialPort.Write(bytes, 0, bytes.Length);
-            }
+                while(true)
+                {
+                    await Task.Delay(300);
+                    byte[] bytes = Encoding.UTF8.GetBytes(SendMessage);
+                    if(serialPort.IsOpen)
+                        serialPort.Write(bytes, 0, bytes.Length);
+                }
+                   
+            });
+
         }
 
         private void GetSerialData(object o, SerialDataReceivedEventArgs e)
