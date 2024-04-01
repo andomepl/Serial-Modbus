@@ -169,17 +169,6 @@ namespace SerialPort.ViewModels
         public MainViewViewModel()
         {
 
-            //StringBuilder sb = new StringBuilder();
-
-            
-            //for(int i=0;i<100;i++)
-            //{
-            //    sb.AppendLine("Test");
-            //}
-
-            //BufferMessage=sb.ToString();
-
-
             InternalPortNames = new ObservableCollection<string>(internalPorts);
 
             OpenSerialPortCommand = new RelayCommand(async () => { OpenSerialPort(); });
@@ -234,6 +223,7 @@ namespace SerialPort.ViewModels
                 {
                     await Task.Delay(300);
                     byte[] bytes = Encoding.UTF8.GetBytes(SendMessage);
+
                     if(serialPort.IsOpen)
                         serialPort.Write(bytes, 0, bytes.Length);
                 }

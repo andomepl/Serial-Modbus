@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modbus", "Modbus\Modbus.csproj", "{E6D8828B-A011-4D94-8B08-182BC31F87F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerialPort", "SerialPort\SerialPort.csproj", "{A67D329C-EAFF-4D97-907F-687C69465E21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialPort", "SerialPort\SerialPort.csproj", "{A67D329C-EAFF-4D97-907F-687C69465E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModbusTool", "Modbus\ModbusTool.csproj", "{5E3BCEFF-EEF5-490C-A548-C7CF5BD1FF15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E6D8828B-A011-4D94-8B08-182BC31F87F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6D8828B-A011-4D94-8B08-182BC31F87F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6D8828B-A011-4D94-8B08-182BC31F87F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6D8828B-A011-4D94-8B08-182BC31F87F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A67D329C-EAFF-4D97-907F-687C69465E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A67D329C-EAFF-4D97-907F-687C69465E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A67D329C-EAFF-4D97-907F-687C69465E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A67D329C-EAFF-4D97-907F-687C69465E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3BCEFF-EEF5-490C-A548-C7CF5BD1FF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3BCEFF-EEF5-490C-A548-C7CF5BD1FF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3BCEFF-EEF5-490C-A548-C7CF5BD1FF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3BCEFF-EEF5-490C-A548-C7CF5BD1FF15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
