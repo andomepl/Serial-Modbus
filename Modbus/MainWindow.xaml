@@ -13,6 +13,23 @@
         <co:IndexToEnableConverter x:Key="IndexToEnable"/>
         <co:IndexToNetworkConnection x:Key="IndexToNetEnable"/>
         <co:ReverseConverter x:Key="reverseConverter"/>
+        <Storyboard x:Key="dashLine">
+            <DoubleAnimation 
+                Duration="0:0:1"
+                From="0"
+                To="10"
+                RepeatBehavior="Forever"
+                Storyboard.TargetName="rectangle"
+                Storyboard.TargetProperty="(Rectangle.StrokeDashOffset)"/>
+        </Storyboard>
+        <Storyboard x:Key="dashLineStop">
+            <DoubleAnimation 
+                Duration="0:0:1"
+                From="0"
+                To="10"
+                Storyboard.TargetName="rectangle"
+                Storyboard.TargetProperty="(Rectangle.StrokeDashOffset)"/>
+        </Storyboard>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -76,6 +93,34 @@
                     Padding="10 5" Margin="5 5" 
                     Content="Connection"
                     HorizontalAlignment="Center">
+                    <ToggleButton.Style>
+                        <Style TargetType="ToggleButton">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border BorderThickness="0" x:Name="internal_border" Background="{TemplateBinding Background}">
+                                            <Grid>
+                                                <Rectangle x:Name="rectangle" StrokeDashArray="5 2" Stroke="Black" Width="100" Height="30"></Rectangle>
+                                                <TextBlock x:Name="tb" Text="Connection" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="tb" Property="Text"  Value="DisConnection"/>
+                                                <Setter TargetName="rectangle" Property="Stroke" Value="Red"/>
+                                                <Trigger.EnterActions>
+                                                    <BeginStoryboard Storyboard="{StaticResource dashLine}"/>
+                                                </Trigger.EnterActions>
+                                                <Trigger.ExitActions>
+                                                    <BeginStoryboard Storyboard="{StaticResource dashLineStop}"/>
+                                                </Trigger.ExitActions>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ToggleButton.Style>
                 </ToggleButton>
             </StackPanel>
         </GroupBox>
